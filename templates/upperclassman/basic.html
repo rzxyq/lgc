@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}
+home
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block content %}
+<form action="/upperclassman/" method="post">
+<div class="container">
+<h2>Upperclassmen survey</h2>
+<br>
+<p class="blurb">We only need this basic information and your major(s) to notify you once the selection process has started. By completing this simple form, you are commiting yourself to meeting with one new student.</p>
+</div>
+<hr>
+<div class="container">
+<h2>Basic information</h2>
+<br>
+{% csrf_token %}
+{% for field in form %}
+	{% if field.name == "major1" %}
+	</div>
+	<hr>
+	<div class="container newform">
+	<h2>Academic</h2>
+	<br>
+	<p class="blurb">Please select the major(s) you are currently pursuing. If you are pursuing one major, mark only one; if you are pursuing a double major, mark only two; etc. If you are a College Scholar or Interdisciplinary Studies Major, please mark the major(s) for which you would feel comfortable providing guidance to a new student.</p>
+	{% endif %}
+	{% if field.name == "survey" %}
+	</div>
+	<hr>
+	<div class="container newform">
+	<h2>A few more questions</h2>
+	<br>
+	{% endif %}
+
+    <p>
+        {{ field.errors }}
+        {{ field.label_tag }}
+        {% if field.name == "name" %}
+        <p style="padding-top: 0 !important;">Example: Hermione Granger</p>
+        {% endif %}
+        {% if field.name == "netid" %}
+		<p style="padding-top: 0 !important;">Example: abc123</p>
+		{% endif %}
+        {{ field }}
+    </p>
+{% endfor %}
+
+</div>
+<hr>
+<div class="container">
+<h2>Schedule</h2>
+<br>
+<p class="blurb">Please take note of the schedule for this round of Let's Get Coffee.</p>
+<p> </p>
+<table id="schedule">
+<tr>
+<td><img src="/static/img/fall1.png" /></td><td><span class="name">Survey</span><br /><span class="desc">New students and upperclassmen complete their respective surveys between September 6 and 12.</span></td>
+</tr>
+<tr>
+<td><img src="/static/img/fall2.png" /></td><td><span class="name">Select</span><br /><span class="desc">Provided the website link by email, upperclassmen select their new students with similar interests.</span></td>
+</tr>
+<tr>
+<td><img src="/static/img/fall3.png" /></td><td><span class="name">Meet</span><br /><span class="desc">Upperclassmen meet with their new student for at least 30 minutes at a public location on campus.</span></td>
+</tr>
+<tr>
+<td><img src="/static/img/fall4.png" /></td><td><span class="name">Reflect</span><br /><span class="desc">Participating students are asked to complete a quick post-connection reflection survey.</span></td>
+</table>
+<p> </p>
+<p class="blurb">By submitting this form, you are committing to select and meet with a new student in accordance to the above schedule.</p>
+<br>
+<input type="submit" value="Submit" />
+</div>
+</form>
+{% endblock %}

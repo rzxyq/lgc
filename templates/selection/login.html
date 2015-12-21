@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Selection process</h1>
+<p>
+	Thank you for your participation in this round of Let's Get Coffee.
+</p>
+<p>
+	Now comes the exciting part when you can select your new student<br>based on similar interests.
+</p>
+<p>
+	Please re-enter the following information exactly as you did on the<br>survey last week to gain access to the survey responses of new<br>students in your college and major.
+</p>
+<br>
+<form action="/selection/" method="post">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}

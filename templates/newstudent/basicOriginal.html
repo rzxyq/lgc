@@ -1,0 +1,327 @@
+{% extends "newstudent/base1.html" %}
+
+{% block title %}
+home
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+{% block content %}
+<form>
+<h1>The following questions server to best capture your interests as a new student at Cornell University. Please recognize that upperclassmen will review your responses when selecting their new students</h1>
+<br>
+<hr>
+<br>
+Name: <input type="text" name="name"><br>
+Netid: <input type="text" name="netid"><br>
+Hometown: <input type="text" name="hometwon"><br>
+Year:
+<div>
+<input type="radio" name="year" value="fresh">Freshman<br>
+<input type="radio" name="year" value="sophomore">Sophomore Transfer<br>
+<input type="radio" name="year" value="junior">Junior Transfer
+</div>
+College: <br>
+If you are planning on transferring to another college, please mark that college so your upperclassman is in that college <br>
+<div>
+<input type="radio" name="school" value="as">Arts & Sciences<br>
+<input type="radio" name="school" value="cals">Agriculture & Life Sciences<br>
+<input type="radio" name="school" value="aap">Architecture, Art & Planning<br>
+<input type="radio" name="school" value="engineering">Engineering<br>
+<input type="radio" name="school" value="hotel">Hotel Administration<br>
+<input type="radio" name="school" value="humec">Human Ecology<br>
+<input type="radio" name="school" value="ilr">Industrial & Labor Relations<br>
+</div>
+<h1>For the academic portion of the survey, please mark the major(s) and minor(s) you are seriously considering</h1>
+<br>
+<hr>
+Majors: <br>
+<div>
+<!-- ARTS AND SCIENCES -->
+	<input type="checkbox" name="major" value="africanaStudies">Africana Studies<br>
+	<input type="checkbox" name="major" value="americanStudies">American Studies<br>
+	<input type="checkbox" name="major" value="anthropology">Antrhopology<br>
+	<input type="checkbox" name="major" value="archaeology">Archaeology<br>
+	<input type="checkbox" name="major" value="asianStudies">Asian Studies<br>
+	<input type="checkbox" name="major" value="astronomy">Astronomy<br>
+	<input type="checkbox" name="major" value="biologicalSciences">Biological Sciences<br>
+	<input type="checkbox" name="major" value="biologyAndSociety">Biology and Society<br>
+	<input type="checkbox" name="major" value="chemistryAndChemicalBiology">Chemistry and Chemical Biology<br>
+	<input type="checkbox" name="major" value="chinaAndAsiaPacificStudies">China and Asia-Pacific Studies<br>
+	<input type="checkbox" name="major" value="classics">Classics<br>
+	<input type="checkbox" name="major" value="comparativeLiterature">Comparative Literature<br>
+	<input type="checkbox" name="major" value="computerScience">Computer Science<br>
+	<input type="checkbox" name="major" value="economics">Economics<br>
+	<input type="checkbox" name="major" value="english">English<br>
+	<input type="checkbox" name="major" value="feminist,GenderAndSexualityStudies">Feminist, Gender and Sexuality Studies<br>
+	<input type="checkbox" name="major" value="french">French<br>
+	<input type="checkbox" name="major" value="germanStudies">German Studies<br>
+	<input type="checkbox" name="major" value="government">Government<br>
+	<input type="checkbox" name="major" value="history">History<br>
+	<input type="checkbox" name="major" value="historyOfArt">History of Art<br>
+	<input type="checkbox" name="major" value="informationScience">Information Science<br>
+	<input type="checkbox" name="major" value="italian">Italian<br>
+	<input type="checkbox" name="major" value="linguistics">Linguistics<br>
+	<input type="checkbox" name="major" value="mathematics">Mathematics<br>
+	<input type="checkbox" name="major" value="music">Music<br>
+	<input type="checkbox" name="major" value="nearEasternStudies">Near Eastern Studies<br>
+	<input type="checkbox" name="major" value="performingAndMediaArts">Performing and Media Arts<br>
+	<input type="checkbox" name="major" value="philosophy">Philosophy<br>
+	<input type="checkbox" name="major" value="physics">Physics<br>
+	<input type="checkbox" name="major" value="psychology">Psychology<br>
+	<input type="checkbox" name="major" value="religiousStudies">Religious Studies<br>
+	<input type="checkbox" name="major" value="scienceAndTechnologyStudies">Science and Technology Studies<br>
+	<input type="checkbox" name="major" value="scienceOfEarthSystems">Science of Earth Systems<br>
+	<input type="checkbox" name="major" value="sociology">Sociology<br>
+	<input type="checkbox" name="major" value="spanish">Spanish<br>
+	<input type="checkbox" name="major" value="statistics">Statistics<br>
+<!-- Agriculture & Life Sciences -->
+	<input type="checkbox" name="major" value="agriculturalSciences">Agricultural Sciences<br>
+	<input type="checkbox" name="major" value="animalScience">Animal Science<br>
+	<input type="checkbox" name="major" value="appliedEconomicsAndManagement">Applied Economics and Management<br>
+	<input type="checkbox" name="major" value="atmostphericScience">Atmospheric Science<br>
+	<input type="checkbox" name="major" value="biologicalEngineering">Biological Engineering<br>
+	<input type="checkbox" name="major" value="biologicalSciences">Biological Sciences<br>
+	<input type="checkbox" name="major" value="biologyAndSociety">Biology and Society<br>
+	<input type="checkbox" name="major" value="biometryAndStatistics">Biometry and Statistics<br>
+	<input type="checkbox" name="major" value="communication">Communication<br>
+	<input type="checkbox" name="major" value="developmentSociology">Development Sociology<br>
+	<input type="checkbox" name="major" value="entomology">Entomology<br>
+	<input type="checkbox" name="major" value="environmentalEngineering">environmentalEngineering<br>
+	<input type="checkbox" name="major" value="environmentalScienceAndSustainability">Environmental Science and Sustainability<br>
+	<input type="checkbox" name="major" value="foodScience">Food Science<br>
+	<input type="checkbox" name="major" value="informationScience">Information Science<br>
+	<input type="checkbox" name="major" value="internationalAgricultureAndRuralDevelopment">International Agriculture and Rural Development<br>
+	<input type="checkbox" name="major" value="landscapeArchitecture">Landscape Architecture<br>
+	<input type="checkbox" name="major" value="nutritionalSciences">Nutritional Sciences<br>
+	<input type="checkbox" name="major" value="plantSciences">Plant Sciences<br>
+	<input type="checkbox" name="major" value="scienceOfEarthSystems">Science of Earth Systems<br>
+	<input type="checkbox" name="major" value="viticultureAndEnology">Viticulture and Enology<br>
+<!-- Architecture, Art & Planning -->
+	<input type="checkbox" name="major" value="architecture">Architecture<br>
+	<input type="checkbox" name="major" value="fineArts">Fine Arts<br>
+	<input type="checkbox" name="major" value="historyOfArchitecture">History of Architecture<br>
+	<input type="checkbox" name="major" value="urbanAndRegionalPlanning">Urban and Regional Planning<br>
+<!-- Engineering -->
+	<input type="checkbox" name="major" value="biologicalEngineering">Biological Engineering<br>
+	<input type="checkbox" name="major" value="chemicalEngineering">Chemical Engineering<br>
+	<input type="checkbox" name="major" value="civilEngineering">Civil Engineering<br>
+	<input type="checkbox" name="major" value="computerScience">Computer Science<br>
+	<input type="checkbox" name="major" value="electricalAndComputerEngineering">Electrical and Computer Engineering<br>
+	<input type="checkbox" name="major" value="engineeringPhysics">Engineering Physics<br>
+	<input type="checkbox" name="major" value="environmentalEngineering">Environmental Engineering<br>
+	<input type="checkbox" name="major" value="informationScience,SystemsAndTechnology">Information Science, Systems and Technology<br>
+	<input type="checkbox" name="major" value="materialsScienceAndEngineering">Materials Science and Engineering<br>
+	<input type="checkbox" name="major" value="mechanicalEngineering">Mechanical Engineering<br>
+	<input type="checkbox" name="major" value="operationsResearchAndEngineering">Operations Research and Engineering<br>
+	<input type="checkbox" name="major" value="scienceOfEarthSystems">Science of Earth Systems<br>
+<!-- Hotel Administration -->
+	<input type="checkbox" name="major" value="hotelAdministration">Hotel Administration<br>
+<!-- Human Ecology -->
+	<input type="checkbox" name="major" value="biologyAndSociety">Biology and Society<br>
+	<input type="checkbox" name="major" value="designAndEnvironmentalAnalysis">Design and Environmental Analysis<br>
+	<input type="checkbox" name="major" value="fiberScienceAndApparelDesign">Fiber Science and Apparel Design<br>
+	<input type="checkbox" name="major" value="humanDevelopment">Human Development<br>
+	<input type="checkbox" name="major" value="humanBiology,HealthAndSociety">Human Biology, Health and Society<br>
+	<input type="checkbox" name="major" value="nutritionalSciences">Nutritional Sciences<br>
+	<input type="checkbox" name="major" value="policyAnalysisAndManagement">Policy Analysis and Management<br>
+<!-- Industrial & Labor Relations -->
+	<input type="checkbox" name="major" value="industrialAndLaborRelations">Industrial and Labor Relations<br>
+</div>
+<hr>
+Minors: <br>
+<div>
+<!-- Instructions: follow the first example -->
+	<input type="checkbox" name="minor" value="aerospaceEngineering">Aerospace Engineering<br>
+	<input type="checkbox" name="minor" value="africanaStudies">Africana Studies<br>
+	<input type="checkbox" name="minor" value="agribusinessManagement">Agribusiness Management<br>
+	<input type="checkbox" name="minor" value="americanIndianStudies">American Indian Studies<br>
+	<input type="checkbox" name="minor" value="animalScience">Animal Science<br>
+	<input type="checkbox" name="minor" value="anthropology">Anthropology<br>
+	<input type="checkbox" name="minor" value="appliedEconomics">Applied Economics<br>
+	<input type="checkbox" name="minor" value="appliedExerciseScience">Applied Exercise Science<br>
+	<input type="checkbox" name="minor" value="appliedMathematics">Applied Mathematics<br>
+	<input type="checkbox" name="minor" value="archaeology">Archaeology<br>
+	<input type="checkbox" name="minor" value="architecture">Architecture<br>
+	<input type="checkbox" name="minor" value="asianAmericanStudies">Asian American Studies<br>
+	<input type="checkbox" name="minor" value="astronomy">Astronomy<br>
+	<input type="checkbox" name="minor" value="atmosphericScience">Atmospheric Science<br>
+	<input type="checkbox" name="minor" value="biologicalEngineering">Biological Engineering<br>
+	<input type="checkbox" name="minor" value="biologicalSciences">Biological Sciences<br>
+	<input type="checkbox" name="minor" value="biomedicalEngineering">Biomedical Engineering<br>
+	<input type="checkbox" name="minor" value="biomedicalSciences">Biomedical Sciences<br>
+	<input type="checkbox" name="minor" value="biometryAndStatistics">Biometry and Statistics<br>
+	<input type="checkbox" name="minor" value="business">Business<br>
+	<input type="checkbox" name="minor" value="businessForEngineeringStudents">Business for Engineering Students<br>
+	<input type="checkbox" name="minor" value="chinaAndAsiaPacificStudies">China and Asia-Pacific Studies<br>
+	<input type="checkbox" name="minor" value="civilInfrastructure">Civil Infrastructure<br>
+	<input type="checkbox" name="minor" value="classics">Classics<br>
+	<input type="checkbox" name="minor" value="climateChange">Climate Change<br>
+	<input type="checkbox" name="minor" value="cognitiveScience">Cognitive Science<br>
+	<input type="checkbox" name="minor" value="communication">Communication<br>
+	<input type="checkbox" name="minor" value="computerScience">Computer Science<br>
+	<input type="checkbox" name="minor" value="computingInTheArts">Computing in the Arts<br>
+	<input type="checkbox" name="minor" value="creativeWriting">Creative Writing<br>
+	<input type="checkbox" name="minor" value="cropManagement">Crop Management<br>
+	<input type="checkbox" name="minor" value="dance">Dance<br>
+	<input type="checkbox" name="minor" value="designAndEnvironmentalAnalysis">Design and Environmental Analysis<br>
+	<input type="checkbox" name="minor" value="developmentSociology">Development Sociology<br>
+	<input type="checkbox" name="minor" value="eastAsiaProgram">East Asia Program<br>
+	<input type="checkbox" name="minor" value="english">English<br>
+	<input type="checkbox" name="minor" value="education">Education<br>
+	<input type="checkbox" name="minor" value="electricalAndComputerEngineering">Electrical and Computer Engineering<br>
+	<input type="checkbox" name="minor" value="engineeringManagement">Engineering Management<br>
+	<input type="checkbox" name="minor" value="engineeringStatistics">Engineering Statistics<br>
+	<input type="checkbox" name="minor" value="entomology">Entomology<br>
+	<input type="checkbox" name="minor" value="environmentalAndResourceEconomics">Environmental and Resource Economics<br>
+	<input type="checkbox" name="minor" value="environmentalEngineering">Environmental Engineering<br>
+	<input type="checkbox" name="minor" value="europeanStudies">European Studies<br>
+	<input type="checkbox" name="minor" value="feminist,GenderAndSexualityStudies">Feminist, Gender and Sexuality Studies<br>
+	<input type="checkbox" name="minor" value="fiberScience">Fiber Science<br>
+	<input type="checkbox" name="minor" value="film">Film<br>
+	<input type="checkbox" name="minor" value="fineArts">Fine Arts<br>
+	<input type="checkbox" name="minor" value="foodScience">Food Science<br>
+	<input type="checkbox" name="minor" value="frenchStudies">French Studies<br>
+	<input type="checkbox" name="minor" value="gameDesign">Game Design<br>
+	<input type="checkbox" name="minor" value="germanStudies">German Studies<br>
+	<input type="checkbox" name="minor" value="gerontology">Gerontology<br>
+	<input type="checkbox" name="minor" value="globalHealth">Global Health<br>
+	<input type="checkbox" name="minor" value="globalization,EthnicityAndDevelopment">Globalization, Ethnicity and Development<br>
+	<input type="checkbox" name="minor" value="healthPolicy">Health Policy<br>
+	<input type="checkbox" name="minor" value="history">History<br>
+	<input type="checkbox" name="minor" value="historyOfArt">History of Art<br>
+	<input type="checkbox" name="minor" value="horticulture">Horticulture<br>
+	<input type="checkbox" name="minor" value="humanBiology">Human Biology<br>
+	<input type="checkbox" name="minor" value="industricalSystemsAndInformationTechnology">Industrial Systems and Information Technology<br>
+	<input type="checkbox" name="minor" value="inequalityStudies">Inequality Studies<br>
+	<input type="checkbox" name="minor" value="informationScience">Information Science<br>
+	<input type="checkbox" name="minor" value="internationalRelations">International Relations<br>
+	<input type="checkbox" name="minor" value="internationalDevelopmentStudies">International Development Studies<br>
+	<input type="checkbox" name="minor" value="internationalTradeAndDevelopment">International Trade and Development<br>
+	<input type="checkbox" name="minor" value="italian">Italian<br>
+	<input type="checkbox" name="minor" value="jewishStudies">Jewish Studies<br>
+	<input type="checkbox" name="minor" value="landscapeStudies">Landscape Studies<br>
+	<input type="checkbox" name="minor" value="latinAmericanStudies">Latin American Studies<br>
+	<input type="checkbox" name="minor" value="latinoStudies">Latino Studies<br>
+	<input type="checkbox" name="minor" value="lawAndRegulation">Law and Regulation<br>
+	<input type="checkbox" name="minor" value="lawAndSociety">Law and Society<br>
+	<input type="checkbox" name="minor" value="lesbian,Gay,BisexualAndTransgender Studies">Lesbian, Gay, Bisexual and Transgender Studies<br>
+	<input type="checkbox" name="minor" value="linguistics">Linguistics<br>
+	<input type="checkbox" name="minor" value="marineBiology">Marine Biology<br>
+	<input type="checkbox" name="minor" value="materialsScienceAndEngineering">Materials Science and Engineering<br>
+	<input type="checkbox" name="minor" value="mathematics">Mathematics<br>
+	<input type="checkbox" name="minor" value="mechanicalEngineering">Mechanical Engineering<br>
+	<input type="checkbox" name="minor" value="medievalStudies">Medieval Studies<br>
+	<input type="checkbox" name="minor" value="minority,IndigenousAndThirdWorldStudies">Minority, Indigenous and Third World Studies<br>
+	<input type="checkbox" name="minor" value="music">Music<br>
+	<input type="checkbox" name="minor" value="naturalResources">Natural Resources<br>
+	<input type="checkbox" name="minor" value="nearEasternStudies">Near Eastern Studies<br>
+	<input type="checkbox" name="minor" value="nutritionAndHealth">Nutrition and Health<br>
+	<input type="checkbox" name="minor" value="operationsResearchAndManagementScience">Operations Research and Management Science<br>
+	<input type="checkbox" name="minor" value="physics">Physics<br>
+	<input type="checkbox" name="minor" value="plantSciences">Plant Sciences<br>
+	<input type="checkbox" name="minor" value="policyAnalysisAndManagement">Policy Analysis and Management<br>
+	<input type="checkbox" name="minor" value="PortuguesAndBrazilianStudies">Portuguese and Brazilian Studies<br>
+	<input type="checkbox" name="minor" value="realEstate">Real Estate<br>
+	<input type="checkbox" name="minor" value="religiousStudies">Religious Studies<br>
+	<input type="checkbox" name="minor" value="scienceAndTechnologyStudies">Science and Technology Studies<br>
+	<input type="checkbox" name="minor" value="scienceOfEarthSystems">Science of Earth Systems<br>
+	<input type="checkbox" name="minor" value="scienceOfNaturalAndEnvironmentalSystems">Science of Natural and Environmental Systems<br>
+	<input type="checkbox" name="minor" value="soilScience">Soil Science<br>
+	<input type="checkbox" name="minor" value="southAsiaStudies">South Asia Studies<br>
+	<input type="checkbox" name="minor" value="southeastAsiaStudies">Southeast Asia Studies<br>
+	<input type="checkbox" name="minor" value="spanish">Spanish<br>
+	<input type="checkbox" name="minor" value="sustainableEnergySystems">Sustainable Energy Systems<br>
+	<input type="checkbox" name="minor" value="theatre">Theatre<br>
+	<input type="checkbox" name="minor" value="urbanAndRegionalStudies">Urban and Regional Studies<br>
+	<input type="checkbox" name="minor" value="visualStudies">Visual Studies<br>
+	<input type="checkbox" name="minor" value="viticultureAndEnology">Viticulture and Enology<br>
+</div>
+<h1>For the extracurricular portion of the survey, please mark all activites of interest</h1>
+<br>
+<hr>
+Extracurricular Interests: <br>
+<div>
+	<input type="checkbox" name="extracurricular" value="acapella">Acapella<br>
+	<input type="checkbox" name="extracurricular" value="clubOrIntramuralSports">Club or Intramural Sports<br>
+	<input type="checkbox" name="extracurricular" value="comedy">Comedy<br>
+	<input type="checkbox" name="extracurricular" value="communityService">Community Service<br>
+	<input type="checkbox" name="extracurricular" value="cultural">Cultural<br>
+	<input type="checkbox" name="extracurricular" value="dance">Dance<br>
+	<input type="checkbox" name="extracurricular" value="designAndGraphics">Design and Graphics<br>
+	<input type="checkbox" name="extracurricular" value="entrepreneurship">Entrepreneurship<br>
+	<input type="checkbox" name="extracurricular" value="environmental">Environmental<br>
+	<input type="checkbox" name="extracurricular" value="eventPlanning">Event Planning<br>
+	<input type="checkbox" name="extracurricular" value="fashion">Fashion<br>
+	<input type="checkbox" name="extracurricular" value="greekLife">Greek Life<br>
+	<input type="checkbox" name="extracurricular" value="journalism">Journalism<br>
+	<input type="checkbox" name="extracurricular" value="LBGTQ">LBGTQ<br>
+	<input type="checkbox" name="extracurricular" value="music">Music<br>
+	<input type="checkbox" name="extracurricular" value="outdoorRecreation">Outdoor Recreation<br>
+	<input type="checkbox" name="extracurricular" value="partying">Partying<br>
+	<input type="checkbox" name="extracurricular" value="pre-ProfessionalOrganizations">Pre-Professional Organizations<br>
+	<input type="checkbox" name="extracurricular" value="projectTeam">Project Team<br>
+	<input type="checkbox" name="extracurricular" value="politicalActivism">Political Activism<br>
+	<input type="checkbox" name="extracurricular" value="scienceResearch">Science Research<br>
+	<input type="checkbox" name="extracurricular" value="socialScienceResearch">Social Science Research<br>
+	<input type="checkbox" name="extracurricular" value="religious">Religious<br>
+	<input type="checkbox" name="extracurricular" value="ROTC">ROTC<br>
+	<input type="checkbox" name="extracurricular" value="speechAndDebate">Speech and Debate<br>
+	<input type="checkbox" name="extracurricular" value="studentGovernment">Student Government<br>
+	<input type="checkbox" name="extracurricular" value="theatre">Theatre<br>
+	<input type="checkbox" name="extracurricular" value="varsitySports">Varsity Sports<br>
+</div>
+<p>Feel free to list any other specific extracurricular activities</p>
+<textarea rows="4" cols="50">
+</textarea>
+<h1>For the career portion of the survey, please mark all prospective fields of interests</h1>
+<br>
+<hr>
+Career: <br>
+<div>
+	<input type="checkbox" name="career" value="businessAndFinance">Business and Finance<br>
+	<input type="checkbox" name="career" value="computerAndTechnology">Computer and Technology<br>
+	<input type="checkbox" name="career" value="design">Design<br>
+	<input type="checkbox" name="career" value="education">Education<br>
+	<input type="checkbox" name="career" value="engineering">Engineering<br>
+	<input type="checkbox" name="career" value="entertainment">Entertainment<br>
+	<input type="checkbox" name="career" value="graduateStudy">Graduate Study<br>
+	<input type="checkbox" name="career" value="government">Government<br>
+	<input type="checkbox" name="career" value="healthProfessions">Health Professions<br>
+	<input type="checkbox" name="career" value="hospitality">Hospitality<br>
+	<input type="checkbox" name="career" value="journalism">Journalism<br>
+	<input type="checkbox" name="career" value="law">Law<br>
+	<input type="checkbox" name="career" value="management">Management<br>
+	<input type="checkbox" name="career" value="mediaCommunications">Media Communications<br>
+	<input type="checkbox" name="career" value="militaryAndArmedForces">Military and Armed Forces<br>
+	<input type="checkbox" name="career" value="nonProfit">Non-Profit<br>
+	<input type="checkbox" name="career" value="publicHealth">Public Health<br>
+	<input type="checkbox" name="career" value="researchAndDevelopment">Research and Development<br>
+	<input type="checkbox" name="career" value="saleAndMarketing">Sales and Marketing<br>
+	<input type="checkbox" name="career" value="undecided">Undecided<br>
+</div>
+<p>Feel free to list any other specific prospective careers</p>
+<textarea rows="4" cols="50">
+</textarea>
+<h1>For the career portion of the survey, please mark all prospective fields of interests</h1>
+<br>
+<h1>For the short answer portion of the survey, please answer concisely and comprehensively</h1>
+<br>
+<hr>
+
+<p>What do you hope to gain from your time at Cornell?</p>
+<textarea rows="4" cols="50">
+</textarea>
+
+<p>What guidance do you want from your upperclassman?</p>
+<textarea rows="4" cols="50">
+</textarea>
+
+<p>Anything else you want to add about yourself?</p>
+<textarea rows="4" cols="50">
+</textarea>
+<input type="submit" value="Submit">
+</form>
+{% endblock %}
