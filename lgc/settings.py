@@ -106,11 +106,11 @@ USE_TZ = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Static asset configuration
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = 'static'
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")  #static root likely won't be in the project folder
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'proj_static'),
 )
 
