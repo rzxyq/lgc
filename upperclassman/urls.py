@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from views import *
+from .views import *
 
 urlpatterns = patterns('',
 	# The main page for category

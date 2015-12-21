@@ -35,7 +35,7 @@ urlpatterns = [
     url(r'^error_chosen/', error_chosen,),
     
     # #New Students
-    # url(r'^newstudent/', include('newstudent.urls', namespace="newstudents")),
-    # url(r'^upperclassman/', include('upperclassman.urls', namespace="upperclassman")),
-    # url(r'^selection/', include('selection.urls', namespace="selection")),
+    url(r'^newstudent/', include('newstudent.urls', namespace="newstudents")),
+    url(r'^upperclassman/', include('upperclassman.urls', namespace="upperclassman")),
+    url(r'^selection/', include('selection.urls', namespace="selection")),
 ]

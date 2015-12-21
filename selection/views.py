@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from forms import *
+from .forms import *
 from upperclassman.models import Upperclassman
 from newstudent.models import NewStudent
 from django.core.exceptions import ObjectDoesNotExist
@@ -17,14 +17,14 @@ def login(request):
             name = form.cleaned_data['name']
             net = (form.cleaned_data['netid']).strip()
             try:
-            	data = Upperclassman.objects.get(netid=net)
+                data = Upperclassman.objects.get(netid=net)
             except ObjectDoesNotExist:
-            	return HttpResponseRedirect('/error_login/')
+                return HttpResponseRedirect('/error_login/')
             if data.finished:
-            	 return HttpResponseRedirect('/error_selected/')
+                 return HttpResponseRedirect('/error_selected/')
             elif name == data.name:
-            	selectees = NewStudent.objects.filter(Q(major=data.major1) |
-            		Q(major=data.major2) | Q(major=data.major3)).filter(selected=False)
+                selectees = NewStudent.objects.filter(Q(major=data.major1) |
+                    Q(major=data.major2) | Q(major=data.major3)).filter(selected=False)
                 if selectees.count() < 5:
                     selectees = NewStudent.objects.filter(college=data.college).filter(selected=False)
                 if selectees.count() < 5:
@@ -49,7 +49,7 @@ def closed(request):
 
 def selection(request):
     selected_choice = request.POST['row']
-    print selected_choice
+    print(selected_choice)
     arr = selected_choice.split(',')
     upperid = arr[1]
     lowerid = arr[0]
@@ -57,16 +57,16 @@ def selection(request):
     if upper.finished:
         return HttpResponseRedirect('/error_chosen/')
     try:
-    	data = NewStudent.objects.get(netid=lowerid)
-    	if data.selected == True:
-    		return HttpResponseRedirect('/error_taken/')
-    	data.upperclassman = upper
-    	data.selected = True
-    	data.save()
-    	upper.finished = True
-    	upper.save()
+        data = NewStudent.objects.get(netid=lowerid)
+        if data.selected == True:
+            return HttpResponseRedirect('/error_taken/')
+        data.upperclassman = upper
+        data.selected = True
+        data.save()
+        upper.finished = True
+        upper.save()
     except ObjectDoesNotExist:
-    	return HttpResponseRedirect('/error_DNE/')
+        return HttpResponseRedirect('/error_DNE/')
     mail_title = 'Let\'s Get Coffee: Selection Complete!'
     message = 'Thank you for completing the selection process of Let\'s Get Coffee.\n\n' + 'You have selected ' + data.name + ' (' + data.netid + ') as your new student in the Fall 2015 Round of Let\'s Get Coffee.\n\nWe ask that you please email your new student within 48 hours to arrange a meeting at a public location on campus (The new student will receive your netid when you select them). When you email your new student, please introduce yourself as his or her new upperclassman connection via Let\'s Get Coffee.\n\nIf you have any questions, please email letsgetcoffeecornell@gmail.com. We hope you have an awesome meeting with your new student that becomes the start of a great friendship.' + '\n\nBest, \nThe Let\'s Get Coffee Steering Committee\n'
     email = 'Let\'s Get Coffee<letsgetcoffeecornell@gmail.com>'
