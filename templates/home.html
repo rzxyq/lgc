@@ -1,57 +1,42 @@
+{% extends "base.html" %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+{% block title %}Home{% endblock %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<style>
+{% block style %}
+    .intro {
+        background: url('{% static "img/homepage_0.jpg" %}') no-repeat top center scroll;
+            display: table;
+        width: 100%;
+        height: auto;
+        padding: 100px 0;
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        position:relative;
+    }
+    .download-section {
+        background: url('{% static "img/homepage_1.jpg" %}') no-repeat center center scroll;
+        width: 100%;
+        padding: 50px 0;
+        color: #fff;
+        background-color: #000;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+    }
+{% endblock %}
+</style>
 
-    <title>Let's Get Coffee - {% block title %}{% endblock %}</title>
-    {% include 'head_css.html' %}
-
-    <style>
-    {% block style %}
-        .intro {
-            background: url('{% static "img/homepage_0.jpg" %}') no-repeat top center scroll;
-                display: table;
-            width: 100%;
-            height: auto;
-            padding: 100px 0;
-            text-align: center;
-            color: #fff;
-            background-color: #000;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-            position:relative;
-        }
-        .download-section {
-            background: url('{% static "img/homepage_1.jpg" %}') no-repeat center center scroll;
-            width: 100%;
-            padding: 50px 0;
-            color: #fff;
-            background-color: #000;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-        }
-    {% endblock %}
-    </style>
-
-</head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-    {% include "navbar.html" %}
-
-    <!-- Intro Header -->
+{% block content %}
+        <!-- Intro Header -->
     <header class="intro">
         <div class="intro-body">
             <div class="container">
@@ -113,16 +98,4 @@
 
     <!-- Map Section -->
     <div id="map"></div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; LGC 2015</p>
-        </div>
-    </footer>
-
-    {% include 'javascript.html' %}
-
-</body>
-
-</html>
+{% endblock content %}
