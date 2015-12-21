@@ -14,6 +14,17 @@
     <title>Let's Get Coffee - {% block title %}{% endblock %}</title>
     {% include 'head_css.html' %}
 
+    <style>
+    {% block style %}
+        .intro {
+            background: url('{% static "img/homepage_0.jpg" %}') no-repeat top center scroll;
+        }
+        .download-section {
+            background: url('{% static "img/homepage_1.jpg" %}') no-repeat center center scroll;
+        }
+    {% endblock style %}
+    </style>
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
