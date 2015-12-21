@@ -1,8 +1,8 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from .views import *
 
-urlpatterns = patterns('',
-	# The main page for category
+urlpatterns = [
+    # The main page for category
     url(r'^$', basic),
     # When closed, replace above line with code below
     # url(r'^$', newstudent_closed)
@@ -12,4 +12,4 @@ urlpatterns = patterns('',
     # url(r'^extracurricular/', extracurricular),
     # url(r'^career/', career),
     # url(r'^shortanswer/', shortanswer),
-)
+]

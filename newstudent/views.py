@@ -57,7 +57,7 @@ def basic(request):
             message = 'Thank you for taking the time to sign up as a new student for the Fall 2015 Round of Let\'s Get Coffee. We are thrilled to have you participating in this initiative.\n\nAfter the survey window has closed on Saturday, September 12, we will share your survey responses with upperclassmen in your college and major, providing them with the opportunity to handpick you based on similar interests. Then, it is their responsibility to email you to arrange a meeting at a public places on campus. We will let you know once you have been selected by an upperclassman via email.\n\nPlease let us know if you have any questions or concerns. \n\nThanks, \nThe Let\'s Get Coffee Steering Committee'
             email = 'Let\'s Get Coffee<letsgetcoffeecornell@gmail.com>'
             recipients = [student.netid + '@cornell.edu']
-            send_mail(mail_title, message, email, recipients)
+            # send_mail(mail_title, message, email, recipients)
             return HttpResponseRedirect('/thanks_newstudent/')
     else:
         form = NewStudentForm()
