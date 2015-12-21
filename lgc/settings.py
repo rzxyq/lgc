@@ -25,7 +25,8 @@ SECRET_KEY = '#mlm(rb*!ryk$qo7u7j4i*bb3e(4d30x5(6n6=vhuzc$#t)128'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,12 +77,13 @@ WSGI_APPLICATION = 'lgc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
-    }
-}
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES = {'default' : {}}
+DATABASES['default'] =  dj_database_url.config()
+
+# Enable Persistent Connections
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
 # Internationalization
@@ -97,33 +99,18 @@ USE_L10N = True
 
 USE_TZ = True
 
-# # local static setting
-# # Static files (CSS, JavaScript, Images)
-# # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")  #static root likely won't be in the project folder
-
 
 # Django Heroku settings -- make sure it's at the end of file
-
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
-
 # Static asset configuration
 STATIC_ROOT = 'staticfiles'
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")  #static root likely won't be in the project folder
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
