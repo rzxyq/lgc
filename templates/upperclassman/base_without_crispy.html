@@ -26,6 +26,36 @@ home
             <br>
             {% csrf_token %}
             {{ form|crispy }}
+            {% for field in form %}
+                {% if field.name == "major1" %}
+                </div>
+                <hr>
+                <div class="col-lg-8 col-lg-offset-2">
+                <h2>Academic</h2>
+                <br>
+                <p class="blurb">Please select the major(s) you are currently pursuing. If you are pursuing one major, mark only one; if you are pursuing a double major, mark only two; etc. If you are a College Scholar or Interdisciplinary Studies Major, please mark the major(s) for which you would feel comfortable providing guidance to a new student.</p>
+                {% endif %}
+
+                {% if field.name == "survey" %}
+                </div>
+                <hr>
+                <div class="col-lg-8 col-lg-offset-2">
+                <h2>A few more questions</h2>
+                <br>
+                {% endif %}
+
+                <p>
+                    {{ field.errors }}
+                    {{ field.label_tag }}
+                    {% if field.name == "name" %}
+                    <p style="padding-top: 0 !important;">Example: Hermione Granger</p>
+                    {% endif %}
+                    {% if field.name == "netid" %}
+                    <p style="padding-top: 0 !important;">Example: abc123</p>
+                    {% endif %}
+                    {{ field }}
+                </p>
+            {% endfor %}
 
             </div>
             <hr>
