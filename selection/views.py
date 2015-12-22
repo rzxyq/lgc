@@ -71,10 +71,10 @@ def selection(request):
     message = 'Thank you for completing the selection process of Let\'s Get Coffee.\n\n' + 'You have selected ' + data.name + ' (' + data.netid + ') as your new student in the Fall 2015 Round of Let\'s Get Coffee.\n\nWe ask that you please email your new student within 48 hours to arrange a meeting at a public location on campus (The new student will receive your netid when you select them). When you email your new student, please introduce yourself as his or her new upperclassman connection via Let\'s Get Coffee.\n\nIf you have any questions, please email letsgetcoffeecornell@gmail.com. We hope you have an awesome meeting with your new student that becomes the start of a great friendship.' + '\n\nBest, \nThe Let\'s Get Coffee Steering Committee\n'
     email = 'Let\'s Get Coffee<letsgetcoffeecornell@gmail.com>'
     recipients = [upper.netid + '@cornell.edu']
-    # send_mail(mail_title, message, email, recipients)
+    send_mail(mail_title, message, email, recipients)
     mail_title2 = 'Let\'s Get Coffee: Selection Complete!'
     message2 = 'Congratulations! You were just selected by an upperclassman participating in Let\'s Get Coffee.\n\n' + upper.name + ' (' + upper.netid + ') will serve as your upperclassman connection in the Fall 2015 Round of Let\'s Get Coffee. It is his or her responsiblity to email you to arrange a meeting at a public place on campus by the end of Monday, September 14.\n\nIf you do not hear from your upperclassman by September 14, please be patient and give them a little more time. If you do not hear from them by Wednesday, please send them an email introducing yourself as their new student connection via Let\'s Get Coffee.\n\nIf you do not hear back from them or have any other questions or concerns, please send us an email at letsgetcoffeecornell@gmail.com. We hope you have an awesome meeting with your upperclassman that becomes the start of a great friendship.' + '\n\nBest, \nThe Let\'s Get Coffee Steering Committee\n'
     email2 = 'Let\'s Get Coffee<letsgetcoffeecornell@gmail.com>'
     recipients2 = [data.netid + '@cornell.edu']
-    # send_mail(mail_title2, message2, email2, recipients2)
+    send_mail(mail_title2, message2, email2, recipients2)
     return HttpResponseRedirect('/thanks_selection/')

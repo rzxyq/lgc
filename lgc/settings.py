@@ -104,6 +104,19 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Email settings
+# EMAIL_HOST should be set to whatever host name your mail server is on.
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+
+DEFAULT_FROM_EMAIL = 'letsgetcoffeecornell@gmail.com'
+EMAIL_HOST_USER = 'letsgetcoffeecornell@gmail.com'
+EMAIL_HOST_PASSWORD = 'Blakebarr'
+SERVER_EMAIL = 'django@letsgetcoffeecornell@gmail.com'
+
+
 # Django Heroku settings -- make sure it's at the end of file
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
