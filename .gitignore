@@ -2,6 +2,7 @@
 lgcvenv
 *.pyc
 staticfiles
+lgc/local_settings.py
 
 # Database
 .DS_Store

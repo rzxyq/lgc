@@ -11,91 +11,95 @@ New student survey
 {% block content %}
 <form action="/newstudent/" method="post">{% csrf_token %}
 
-<div class="container newform">
-{% if form.errors %}
-<p class="errorlist" style="font-size: 18px; font-weight: bolder">
-Error: you have incorrectly filled out some part of the survey. Please scroll down to see the red error text.
-</p>
-{% endif %}
-<h2>New student survey</h2>
-<br>
-<p class="blurb">The following questions serve to best capture your interests as freshmen or transfer students at Cornell University. Please recognize that upperclassmen will review your responses when selecting their new students.</p>
-</div>
-<hr>
-<div class="container newform">
-<h2>Basic information</h2>
-<br>
-{% for field in form %}
-	{% if field.name == "major" %}
-	</div>
-	<hr>
-	<div class="container newform">
-	<h2>Academic</h2>
-	<br>
-	<p class="blurb">For the academic portion of the survey, please select the major and potential minor that you are most strongly considering even if you are not currently in that college or major. Keep in mind that your upperclassman will likely share your academic selections.</p>
-	{% endif %}
-	{% if field.name == "extracurriculars" %}
-	</div>
-	<hr>
-	<div class="container newform">
-	<h2>Extracurricular</h2>
-	<br>
-	<p class="blurb">For the extracurricular portion of the survey, please mark all activities of significant interest. Please do not mark more than five.</p>
-	{% endif %}
-	{% if field.name == "career" %}
-	</div>
-	<hr>
-	<div class="container newform">
-	<h2>Career</h2>
-	<br>
-	<p class="blurb">For the career portion of the survey, please mark all prospective fields of significant interest. Please do not mark more than five.</p>
-	{% endif %}
-	{% if field.name == "sa1" %}
-	</div>
-	<hr>
-	<div class="container newform">
-	<h2>Short Answer</h2>
-	<br>
-	<p class="blurb">For the short answer portion of the survey, please respond concisely and comprehensively. What you answer will help upperclassmen determine if they could be a positive mentor for you.</p>
-	{% endif %}
-    <p>
-        {{ field.errors }}
-        {{ field.label_tag }}
-        {% if field.name == "name" %}
-        <p style="padding-top: 0 !important;">Example: Ron Weasley</p>
+<section id="contact" class="container content-section">
+    <div class="row" align="left">
+        <div class="col-lg-8 col-lg-offset-2">
+        {% if form.errors %}
+        <p class="errorlist" style="font-size: 18px; font-weight: bolder">
+        Error: you have incorrectly filled out some part of the survey. Please scroll down to see the red error text.
+        </p>
         {% endif %}
-        {% if field.name == "netid" %}
-		<p style="padding-top: 0 !important;">Example: abc123</p>
-		{% endif %}
-		{% if field.name == "extra_sa" %}
-		<p style="padding-top: 0 !important;">75 characters max (optional)</p>
-		<br>
-		{% endif %}
-		{% if field.name == "career_sa" %}
-		<p style="padding-top: 0 !important;">75 characters max (optional)</p>
-		<br>
-		{% endif %}
-		{% if field.name == "sa1" %}
-		<p style="padding-top: 0 !important;">250 characters max (required)</p>
-		<br>
-		{% endif %}
-		{% if field.name == "sa2" %}
-		<p style="padding-top: 0 !important;">250 characters max (required)</p>
-		<br>
-		{% endif %}
-		{% if field.name == "sa3" %}
-		<p style="padding-top: 0 !important;">250 characters max (required)</p>
-		<br>
-		{% endif %}
-        {{ field }}
+        <h2>New student survey</h2>
+        <br>
+        <p class="blurb">The following questions serve to best capture your interests as freshmen or transfer students at Cornell University. Please recognize that upperclassmen will review your responses when selecting their new students.</p>
+        </div>
+        <hr>
+        <div class="container newform">
+        <h2>Basic information</h2>
+        <br>
+        {% for field in form %}
+            {% if field.name == "major" %}
+            </div>
+            <hr>
+            <div class="container newform">
+            <h2>Academic</h2>
+            <br>
+            <p class="blurb">For the academic portion of the survey, please select the major and potential minor that you are most strongly considering even if you are not currently in that college or major. Keep in mind that your upperclassman will likely share your academic selections.</p>
+            {% endif %}
+            {% if field.name == "extracurriculars" %}
+            </div>
+            <hr>
+            <div class="container newform">
+            <h2>Extracurricular</h2>
+            <br>
+            <p class="blurb">For the extracurricular portion of the survey, please mark all activities of significant interest. Please do not mark more than five.</p>
+            {% endif %}
+            {% if field.name == "career" %}
+            </div>
+            <hr>
+            <div class="container newform">
+            <h2>Career</h2>
+            <br>
+            <p class="blurb">For the career portion of the survey, please mark all prospective fields of significant interest. Please do not mark more than five.</p>
+            {% endif %}
+            {% if field.name == "sa1" %}
+            </div>
+            <hr>
+            <div class="container newform">
+            <h2>Short Answer</h2>
+            <br>
+            <p class="blurb">For the short answer portion of the survey, please respond concisely and comprehensively. What you answer will help upperclassmen determine if they could be a positive mentor for you.</p>
+            {% endif %}
+            <p>
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {% if field.name == "name" %}
+                <p style="padding-top: 0 !important;">Example: Ron Weasley</p>
+                {% endif %}
+                {% if field.name == "netid" %}
+                <p style="padding-top: 0 !important;">Example: abc123</p>
+                {% endif %}
+                {% if field.name == "extra_sa" %}
+                <p style="padding-top: 0 !important;">75 characters max (optional)</p>
+                <br>
+                {% endif %}
+                {% if field.name == "career_sa" %}
+                <p style="padding-top: 0 !important;">75 characters max (optional)</p>
+                <br>
+                {% endif %}
+                {% if field.name == "sa1" %}
+                <p style="padding-top: 0 !important;">250 characters max (required)</p>
+                <br>
+                {% endif %}
+                {% if field.name == "sa2" %}
+                <p style="padding-top: 0 !important;">250 characters max (required)</p>
+                <br>
+                {% endif %}
+                {% if field.name == "sa3" %}
+                <p style="padding-top: 0 !important;">250 characters max (required)</p>
+                <br>
+                {% endif %}
+                {{ field }}
 
-    </p>
-{% endfor %}
-<p> </p>
-<p>Your response will only be successfully submitted if you proceed to a thanks page; otherwise, there is an error in your survey responses that must be corrected. Thanks!</p>
-<br>
-<input type="submit" value="Submit" />
-</div>
+            </p>
+        {% endfor %}
+        <p> </p>
+        <p>Your response will only be successfully submitted if you proceed to a thanks page; otherwise, there is an error in your survey responses that must be corrected. Thanks!</p>
+        <br>
+        <input type="submit" value="Submit" />
+        </div>
+    </div>
+</section>
 </form>
 
 {% endblock %}
