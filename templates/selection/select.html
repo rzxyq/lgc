@@ -30,6 +30,8 @@ function check(){
                 Once you have selected your connection, the name and netid of the student <br/>will be emailed to you.
             </p>
             <br>
+        </div>
+        <div>
             <form action="/selection/list/" method="post" onsubmit="return check();">{% csrf_token %}
             <table id="students">
             <thead>
@@ -71,7 +73,9 @@ function check(){
                 </tr>
             {% endfor %}
             </table>
-            <input type="submit" value="Submit" />
+        </div>
+        <div>
+            <input class='btn btn-default btn-lg' type="submit" value="Submit"/>
             </form>
         </div>
     </div>
