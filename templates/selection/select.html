@@ -16,58 +16,64 @@ function check(){
 {% endblock %}
 
 {% block content %}
-<h1>Select your new student</h1>
-<p>
-    Below are all the survey results of new students in your selected major(s). 
-</p>
-<p>
-    If there are less than 5 available new students in your selected major(s),<br>below are all the new students in your college. Please select your new<br>student based on similar interests.
-</p>
-<p>
-    Once you have selected your connection, the name and netid of the student <br/>will be emailed to you.
-</p>
-<br>
-<form action="/selection/list/" method="post" onsubmit="return check();">{% csrf_token %}
-<table id="students">
-<thead>
-    <tr>
-    	<th id="select"></th>
-    	<th id="name">Name</th>
-<!--     	<th id="netid">Netid</th> -->
-    	<th id="hometown">Hometown</th>
-    	<th id="year">Year</th>
-    	<th id="college">College</th>
-    	<th id="major">Major</th>
-    	<th id="minor">Minor</th>
-    	<th id="extrac">Extracurricular Interests</th>
-<!--     	<th id="otherex">Other Extracurriculars</th> -->
-    	<th id="career">Career Interests</th>
-<!--     	<th id="othercar">Other Career Aspirations</th> -->
-    	<th id="hope">What do you hope to gain from your time at Cornell?</th>
-    	<th id="guidance">What guidance do you want from your upperclassman?</th>
-    	<th id="else">Anything else you want to add about yourself?</th>
-    </tr>
-</thead>
-{% for student in students %}
-    <tr>
-        <td><input type="radio" name="row" value={{student.netid}},{{user.id}}></td>
-        <td>{{student.name}} <br/> ({{student.netid}})</td>
-<!--         <td>{{student.netid}}</td> -->
-        <td>{{student.hometown}}</td>
-        <td>{{student.year}}</td>
-        <td>{{student.college}}</td>
-        <td>{{student.major}}</td>
-        <td>{{student.minor}}</td>
-        <td>{{student.extracurricular}}. <br/>Other: {{student.extra_sa}}</td>
-<!--         <td>{{student.extra_sa}}</td> -->
-        <td>{{student.career}}.<br/>Other: {{student.career_sa}}</td>
-<!--         <td>{{student.career_sa}}</td> -->
-        <td>{{student.sa1}}</td>
-        <td>{{student.sa2}}</td>
-        <td>{{student.sa3}}</td>
-    </tr>
-{% endfor %}
-</table>
-<input type="submit" value="Submit" />
-</form>
+<section id="intro" class="container content-section">
+    <div class="row" align="left">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1>Select your new student</h1>
+            <p>
+                Below are all the survey results of new students in your selected major(s). 
+            </p>
+            <p>
+                If there are less than 5 available new students in your selected major(s),<br>below are all the new students in your college. Please select your new<br>student based on similar interests.
+            </p>
+            <p>
+                Once you have selected your connection, the name and netid of the student <br/>will be emailed to you.
+            </p>
+            <br>
+            <form action="/selection/list/" method="post" onsubmit="return check();">{% csrf_token %}
+            <table id="students">
+            <thead>
+                <tr>
+                    <th id="select"></th>
+                    <th id="name">Name</th>
+            <!--        <th id="netid">Netid</th> -->
+                    <th id="hometown">Hometown</th>
+                    <th id="year">Year</th>
+                    <th id="college">College</th>
+                    <th id="major">Major</th>
+                    <th id="minor">Minor</th>
+                    <th id="extrac">Extracurricular Interests</th>
+            <!--        <th id="otherex">Other Extracurriculars</th> -->
+                    <th id="career">Career Interests</th>
+            <!--        <th id="othercar">Other Career Aspirations</th> -->
+                    <th id="hope">What do you hope to gain from your time at Cornell?</th>
+                    <th id="guidance">What guidance do you want from your upperclassman?</th>
+                    <th id="else">Anything else you want to add about yourself?</th>
+                </tr>
+            </thead>
+            {% for student in students %}
+                <tr>
+                    <td><input type="radio" name="row" value={{student.netid}},{{user.id}}></td>
+                    <td>{{student.name}} <br/> ({{student.netid}})</td>
+            <!--         <td>{{student.netid}}</td> -->
+                    <td>{{student.hometown}}</td>
+                    <td>{{student.year}}</td>
+                    <td>{{student.college}}</td>
+                    <td>{{student.major}}</td>
+                    <td>{{student.minor}}</td>
+                    <td>{{student.extracurricular}}. <br/>Other: {{student.extra_sa}}</td>
+            <!--         <td>{{student.extra_sa}}</td> -->
+                    <td>{{student.career}}.<br/>Other: {{student.career_sa}}</td>
+            <!--         <td>{{student.career_sa}}</td> -->
+                    <td>{{student.sa1}}</td>
+                    <td>{{student.sa2}}</td>
+                    <td>{{student.sa3}}</td>
+                </tr>
+            {% endfor %}
+            </table>
+            <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock %}
