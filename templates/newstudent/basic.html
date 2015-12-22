@@ -11,7 +11,7 @@ New student survey
 {% block content %}
 <form action="/newstudent/" method="post">{% csrf_token %}
 
-<section id="contact" class="container content-section">
+<section id="intro" class="container content-section">
     <div class="row" align="left">
         <div class="col-lg-8 col-lg-offset-2">
         {% if form.errors %}
@@ -23,39 +23,44 @@ New student survey
         <br>
         <p class="blurb">The following questions serve to best capture your interests as freshmen or transfer students at Cornell University. Please recognize that upperclassmen will review your responses when selecting their new students.</p>
         </div>
-        <hr>
-        <div class="container newform">
+    </div>
+
+    <div class="row" align="left">
+        <div class="col-lg-8 col-lg-offset-2">
         <h2>Basic information</h2>
         <br>
         {% for field in form %}
             {% if field.name == "major" %}
             </div>
             <hr>
-            <div class="container newform">
+            <div class="col-lg-8 col-lg-offset-2">
             <h2>Academic</h2>
             <br>
             <p class="blurb">For the academic portion of the survey, please select the major and potential minor that you are most strongly considering even if you are not currently in that college or major. Keep in mind that your upperclassman will likely share your academic selections.</p>
             {% endif %}
+
             {% if field.name == "extracurriculars" %}
             </div>
             <hr>
-            <div class="container newform">
+            <div class="col-lg-8 col-lg-offset-2">
             <h2>Extracurricular</h2>
             <br>
             <p class="blurb">For the extracurricular portion of the survey, please mark all activities of significant interest. Please do not mark more than five.</p>
             {% endif %}
+
             {% if field.name == "career" %}
             </div>
             <hr>
-            <div class="container newform">
+            <div class="col-lg-8 col-lg-offset-2">
             <h2>Career</h2>
             <br>
             <p class="blurb">For the career portion of the survey, please mark all prospective fields of significant interest. Please do not mark more than five.</p>
             {% endif %}
+
             {% if field.name == "sa1" %}
             </div>
             <hr>
-            <div class="container newform">
+            <div class="col-lg-8 col-lg-offset-2">
             <h2>Short Answer</h2>
             <br>
             <p class="blurb">For the short answer portion of the survey, please respond concisely and comprehensively. What you answer will help upperclassmen determine if they could be a positive mentor for you.</p>
@@ -90,10 +95,8 @@ New student survey
                 <br>
                 {% endif %}
                 {{ field }}
-
             </p>
         {% endfor %}
-        <p> </p>
         <p>Your response will only be successfully submitted if you proceed to a thanks page; otherwise, there is an error in your survey responses that must be corrected. Thanks!</p>
         <br>
         <input type="submit" value="Submit" />
