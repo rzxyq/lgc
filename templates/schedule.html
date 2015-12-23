@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
 
 {% block title %}
 Schedule
@@ -18,16 +20,16 @@ Schedule
             <p> </p>
             <table id="schedule">
             <tr>
-            <td><img src="/static/img/fall1.png" /></td><td><span class="name">Survey</span><br /><span class="desc">New students and upperclassmen complete their respective surveys between September 6 and 12.</span></td>
+            <td><img src='{% static "img/fall1.png" %}' /></td><td><span class="name">Survey</span><br /><span class="desc">New students and upperclassmen complete their respective surveys between September 6 and 12.</span></td>
             </tr>
             <tr>
-            <td><img src="/static/img/fall2.png" /></td><td><span class="name">Select</span><br /><span class="desc">Provided the website link by email, upperclassmen select their new students with similar interests.</span></td>
+            <td><img src='{% static "img/fall2.png" %}' /></td><td><span class="name">Select</span><br /><span class="desc">Provided the website link by email, upperclassmen select their new students with similar interests.</span></td>
             </tr>
             <tr>
-            <td><img src="/static/img/fall3.png" /></td><td><span class="name">Meet</span><br /><span class="desc">Upperclassmen meet with their new student for at least 30 minutes at a public location on campus.</span></td>
+            <td><img src='{% static "img/fall3.png" %}' /></td><td><span class="name">Meet</span><br /><span class="desc">Upperclassmen meet with their new student for at least 30 minutes at a public location on campus.</span></td>
             </tr>
             <tr>
-            <td><img src="/static/img/fall4.png" /></td><td><span class="name">Reflect</span><br /><span class="desc">Participating students are asked to complete a quick post-connection reflection survey.</span></td>
+            <td><img src='{% static "img/fall4.png" %}' /></td><td><span class="name">Reflect</span><br /><span class="desc">Participating students are asked to complete a quick post-connection reflection survey.</span></td>
             </tr>
             </table>
         </div>
